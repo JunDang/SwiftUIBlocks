@@ -1,0 +1,29 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+xcuserdata/
+*.xcodeproj
+*.xcworkspace
+DerivedData/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Swift
+*.swiftmodule
+*.swiftdoc
+
+# Documentation
+.docc-build/
+docs/build/
+
+# Testing
+.test-results/
+*.profraw
