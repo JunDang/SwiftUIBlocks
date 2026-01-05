@@ -2,8 +2,9 @@ import SwiftUI
 import SwiftUIBlocks
 
 // MARK: - Selectable Example
-struct SelectableTagsExample: View {
-    let allTags = ["Swift", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "SwiftData", "Testing"]
+struct FlowLayoutExample: View {
+    let allTags = ["Swift", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "SwiftData", "Testing", "Instruments", "Networking"]
+    
     @State private var selectedTags: Set<String> = []
     
     var body: some View {
@@ -34,3 +35,9 @@ struct SelectableTagsExample: View {
         .padding()
     }
 }
+
+// MARK: - Previews
+#Preview("Flow Layout") {
+    FlowLayoutExample()
+}
+

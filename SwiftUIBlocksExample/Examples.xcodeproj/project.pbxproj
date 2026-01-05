@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4C4DC1A82F0B3A2A00D64782 /* SwiftUIBlocks in Frameworks */ = {isa = PBXBuildFile; productRef = 4C4DC1A72F0B3A2A00D64782 /* SwiftUIBlocks */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4C4DC1502F0B086F00D64782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4DC1A82F0B3A2A00D64782 /* SwiftUIBlocks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				4C4DC1442F0B086C00D64782 /* Examples */,
 				4C4DC1522F0B086F00D64782 /* ExamplesTests */,
 				4C4DC15C2F0B086F00D64782 /* ExamplesUITests */,
+				4C4DC1A62F0B3A2A00D64782 /* Frameworks */,
 				4C4DC1432F0B086C00D64782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				4C4DC1592F0B086F00D64782 /* ExamplesUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4C4DC1A62F0B3A2A00D64782 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = Examples;
 			packageProductDependencies = (
+				4C4DC1A72F0B3A2A00D64782 /* SwiftUIBlocks */,
 			);
 			productName = Examples;
 			productReference = 4C4DC1422F0B086C00D64782 /* Examples.app */;
@@ -588,6 +602,14 @@
 			relativePath = ../../SwiftUIBlocks;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C4DC1A72F0B3A2A00D64782 /* SwiftUIBlocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C4DC1952F0B31FF00D64782 /* XCLocalSwiftPackageReference "../../SwiftUIBlocks" */;
+			productName = SwiftUIBlocks;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C4DC13A2F0B086C00D64782 /* Project object */;
 }
