@@ -1,14 +1,25 @@
 import SwiftUI
 
 public struct FlowLayout: Layout {
-    public let spacing: CGFloat = 8
+    public let horizontalSpacing: CGFloat
+    public let verticalSpacing: CGFloat
     
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+    public init(spacing: CGFloat = 8) {
+        self.horizontalSpacing = spacing
+        self.verticalSpacing = spacing
+    }
+    
+    public init(horizontalSpacing: CGFloat = 8, verticalSpacing: CGFloat = 8) {
+        self.horizontalSpacing = horizontalSpacing
+        self.verticalSpacing = verticalSpacing
+    }
+    
+    public func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
         let result = arrange(proposal: proposal, subviews: subviews)
         return result.size
     }
     
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+    public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         let result = arrange(proposal: proposal, subviews: subviews)
         
         for (index, position) in result.positions.enumerated() {
@@ -20,6 +31,10 @@ public struct FlowLayout: Layout {
     }
     
     private func arrange(proposal: ProposedViewSize, subviews: Subviews) -> (size: CGSize, positions: [CGPoint]) {
+        guard !subviews.isEmpty else {
+            return (.zero, [])
+        }
+        
         let maxWidth = proposal.width ?? .infinity
         
         var positions: [CGPoint] = []
@@ -34,15 +49,15 @@ public struct FlowLayout: Layout {
             // Move to next line if needed
             if currentX + size.width > maxWidth && currentX > 0 {
                 currentX = 0
-                currentY += lineHeight + spacing
+                currentY += lineHeight + verticalSpacing
                 lineHeight = 0
             }
             
             positions.append(CGPoint(x: currentX, y: currentY))
             
             lineHeight = max(lineHeight, size.height)
-            currentX += size.width + spacing
-            maxX = max(maxX, currentX)
+            currentX += size.width + horizontalSpacing
+            maxX = max(maxX, currentX - horizontalSpacing) // Remove trailing spacing
         }
         
         let totalHeight = currentY + lineHeight

@@ -195,6 +195,9 @@
 			);
 			mainGroup = 4C4DC1392F0B086C00D64782;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4C4DC1952F0B31FF00D64782 /* XCLocalSwiftPackageReference "../../SwiftUIBlocks" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4C4DC1432F0B086C00D64782 /* Products */;
 			projectDirPath = "";
@@ -578,6 +581,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4C4DC1952F0B31FF00D64782 /* XCLocalSwiftPackageReference "../../SwiftUIBlocks" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../SwiftUIBlocks;
+		};
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 4C4DC13A2F0B086C00D64782 /* Project object */;
 }
