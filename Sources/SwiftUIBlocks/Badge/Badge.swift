@@ -5,6 +5,7 @@ struct Badge: View {
     let color: Color
     let icon: String?
     let style: BadgeStyle
+    let accessibilityLabel: String
     
     enum BadgeStyle {
         case filled
@@ -15,11 +16,13 @@ struct Badge: View {
     init(_ text: String,
          color: Color = .blue,
          icon: String? = nil,
-         style: BadgeStyle = .soft) {
+         style: BadgeStyle = .soft,
+         accessibilityLabel: String = "") {
         self.text = text
         self.color = color
         self.style = style
         self.icon = icon
+        self.accessibilityLabel = accessibilityLabel
     }
     
     var body: some View {
@@ -43,6 +46,8 @@ struct Badge: View {
                     .stroke(color, lineWidth: 1)
             }
         }
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityAddTraits(.isStaticText)
     }
     
     private var backgroundColor: Color {

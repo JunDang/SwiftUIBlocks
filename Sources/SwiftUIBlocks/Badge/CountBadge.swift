@@ -4,10 +4,11 @@ import SwiftUI
 struct CountBadge: View {
     let count: Int
     let color: Color
-    
-    init(_ count: Int, color: Color = .red) {
+    let accessibilityLabel: String
+    init(_ count: Int, color: Color = .red, accessibilityLabel: String = "") {
         self.count = count
         self.color = color
+        self.accessibilityLabel = accessibilityLabel
     }
     
     var body: some View {
@@ -20,6 +21,8 @@ struct CountBadge: View {
             .background(color)
             .foregroundStyle(.white)
             .clipShape(Capsule())
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityAddTraits(.isStaticText)
     }
     
     private var countText: String {
@@ -29,10 +32,11 @@ struct CountBadge: View {
 
 #Preview("Count Badges") {
     HStack(spacing: 20) {
-        CountBadge(3)
+        CountBadge(3, accessibilityLabel: "3 messages not read yet")
         CountBadge(12)
-        CountBadge(99)
-        CountBadge(150)
+        CountBadge(99, accessibilityLabel: "you have more than 99 messages")
+        CountBadge(150, accessibilityLabel: "\(50)")
+        
     }
     .padding()
 }

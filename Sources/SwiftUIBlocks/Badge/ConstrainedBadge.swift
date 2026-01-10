@@ -23,6 +23,8 @@ struct ConstrainedBadge: View {
             .background(backgroundColor.opacity(0.15))
             .foregroundStyle(foregroundColor)
             .cornerRadius(12)
+            .accessibilityLabel(text)
+            .accessibilityAddTraits(.isStaticText)
     }
 }
 
