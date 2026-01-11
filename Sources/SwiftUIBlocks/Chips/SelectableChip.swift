@@ -29,14 +29,14 @@ public struct SelectableChip: View {
                         .font(.caption)
                 }
                 Text(text)
-                                .font(.subheadline)
-                                .fontWeight(.medium)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
             }
             .padding(.horizontal, 12)
-                 .padding(.vertical, 8)
-                 .background(isSelected ? color : Color.gray.opacity(0.15))
-                 .foregroundStyle(isSelected ? .white : .primary)
-                 .cornerRadius(20)
+            .padding(.vertical, 8)
+            .background(isSelected ? color : Color.gray.opacity(0.15))
+            .foregroundStyle(isSelected ? .white : .primary)
+            .cornerRadius(20)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(text)
