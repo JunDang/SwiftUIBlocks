@@ -1,9 +1,14 @@
 import SwiftUI
 
-struct OfflineBanner: View {
-    let lastSyncDate: Date?
+public struct OfflineBanner: View {
     
-    var body: some View {
+    private let lastSyncDate: Date?
+    
+    public init(lastSyncDate: Date?) {
+        self.lastSyncDate = lastSyncDate
+    }
+    
+    public var body: some View {
         HStack(spacing: 8) {
             Image(systemName: "wifi.slash")
                 .font(.caption)
